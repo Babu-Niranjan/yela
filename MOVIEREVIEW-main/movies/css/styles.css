@@ -1,0 +1,287 @@
+:root {
+    --color-primary: #2584ff;
+    --color-secondary: #00d9ff;
+    --color-accent: #ff3400;
+    --color-body: #918ca4;
+    --color-headings: #1b0760;
+    --color-header: #000;
+}
+*, *::after, *::before {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+  
+body {
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-size: 2.4rem;
+    line-height: 1.5;
+    color: var(--color-body);
+  }
+
+p {
+    margin-top: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    color: var(--color-headings);
+    margin-bottom: 1rem;
+    line-height: 1.1;
+  }
+
+  h1 {
+    font-size: 7rem;
+  }
+  
+  h2 {
+    font-size: 3rem;
+  }
+  
+  h3 {
+    font-size: 3rem;
+  }
+
+html {
+    font-size: 62.5%;
+}
+
+/* list */
+.list {
+    list-style: none;
+    color: var(--color-heading);
+
+}
+
+/* Icon */
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.icon--primary {
+    fill: var(--color-primary);
+}
+
+.icon--white {
+    fill: #fff;
+}
+
+.icon-container {
+    background: #f3f9fa;
+    width: 64px;
+    height: 64px;
+    border-radius: 100%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+/*collapsible*/
+.collapsible__content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+  }
+  
+.collapsible--expanded .collapsible__content {
+    max-height: 100vh;
+    opacity: 1;
+  }
+
+/* Header */
+.nav {
+    align-items: center;
+    background-color: var(--color-header);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0 1rem;
+}
+
+.nav__list{
+    width: 100%;
+    font-size: 2rem;
+    margin: 0;
+}
+
+.nav__item {
+    padding: 0.5rem 2rem;
+    border-bottom: 1px solid #222;
+}
+
+.nav__item > a {
+    color: #d2d0db;
+    text-decoration: none;
+}
+
+.nav__item > a:hover {
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav__toggler {
+    opacity: 0.5;
+    transition: box-shadow .15s;
+    cursor: pointer;
+}
+
+.nav.collapsible--expanded .nav__toggler {
+    opacity: 1;
+    box-shadow: 0 0 0 3px #666;
+    border-radius: 5px;
+}
+
+@media screen and (min-width: 768px) {
+    .nav__toggler {
+        display: none;
+    }
+    .nav__list {
+        width: auto;
+        display: flex;
+        font-size: 1.8rem;
+        max-height: 100%;
+        opacity: 1;
+    }
+    .nav__item {
+        border: 0;
+    }
+}
+.block {
+    padding: 2rem;
+}
+
+
+.container {
+    margin: auto;
+    max-width: 1140px;
+}
+
+.block__header {
+    display: inline-block;
+    width: 90vw;
+    text-align: center;
+}
+.block__header>h2 {    font-weight: 700;
+}
+.block__header>p {
+    color: var(--color-body);
+}
+
+
+/* Input-Group */
+.input {
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    color: var(--color-accent);
+    font-size: 2rem;
+    outline: 0;
+    padding: 1.5rem 3.5rem;
+    
+}
+
+.input-group {
+    border: 1px solid #ccc;
+    border-radius: 30px;
+    display: flex;
+    box-shadow: 0 0 20px 10px #f3f3f3;
+    margin: 1.5rem auto 1.5rem auto;
+}
+.input-group .btn {
+    border-radius: 40px;
+    padding: 1.5rem 1.5rem;
+    font-size: 1.8rem;
+    font-weight: 600;
+    text-align: center; 
+    text-transform: uppercase;
+    vertical-align: middle;
+    border: 0;
+}
+
+.input-group .input {
+    border: 0;
+    flex-grow: 1;
+    padding: 1.5rem 1rem;
+}
+
+.btn--accent {
+    background: var(--color-accent);
+    color: #fff;
+  }
+
+  .btn--accent:hover {
+    background: #ec3000;
+  }
+
+::placeholder {
+    color: #cdcbd7;
+}
+
+@media screen and (min-width: 768) {
+    .input {
+        font-size: 1.5rem;
+    }
+    .input-group .btn {
+        font-size: 1.5rem;
+    }
+}
+/* Block-Domain */
+.badge {
+    border-radius: 20px;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.5rem 2rem;
+    white-space: nowrap;
+}
+
+.badge--primary {
+    background-color: var(--color-primary);
+    color: #fff;
+}
+
+
+.badge--secondary {
+    background-color: var(--color-secondary);
+    color: #fff;
+}
+
+
+.badge--small {
+    font-size: 1.6rem;
+    padding: 0.5rem 1.5rem;
+}
+
+.block-domain > li > a {
+    text-decoration: none;
+    float: left;
+    max-width: 1140px;
+    margin: 2rem 2rem;
+}
+
+@media screen and (min-width: 768px) {
+    .badge {
+        font-size: 1.5rem;
+    }
+    .badge--small {
+        font-size: 1.2rem;
+    }
+    .block-domain > li > a  {
+        margin: 2rem 12rem;
+    }
+}
+
+/*  GRID */
+.grid {
+    display: grid;
+}
+
+@media screen and (min-width:768px){
+    .grid--1x2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .grid--1x3 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
